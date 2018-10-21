@@ -5,6 +5,7 @@ import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import com.example.rossen.androidadvancedlearning.R
+import com.example.rossen.androidadvancedlearning.espresso.MenuActivity
 import com.example.rossen.androidadvancedlearning.fragments.ui.MainFragmentsActivity
 import com.example.rossen.androidadvancedlearning.libraries.EmojifyMeActivity
 import com.example.rossen.androidadvancedlearning.mvp.MVPMainActivity
@@ -42,6 +43,13 @@ class MainActivity : Activity() {
             val placesIntent = Intent(this, MVPMainActivity::class.java)
             startActivity(placesIntent)
         }
+
+        espresso_button.setOnClickListener {
+            val espressoIntent=Intent(this,MenuActivity::class.java)
+            startActivity(espressoIntent)
+        }
+
+
     }
 
 

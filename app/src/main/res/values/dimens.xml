@@ -21,4 +21,7 @@
     <dimen name="linear_layout_shushme_horizontal_margin">16dp</dimen>
     <dimen name="players_added_textview_horizontal_margin">30dp</dimen>
     <dimen name="player_joined_textview_vertical_margin">15dp</dimen>
+
+    //еспрессо
+    <dimen name="default_gap">16dp</dimen>
 </resources>

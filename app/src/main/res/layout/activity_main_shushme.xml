@@ -27,13 +27,13 @@
             android:layout_marginTop="@dimen/settings_text_view_margin_top"
             android:text="@string/settings_label"
             android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-            android:textColor="@color/colorPrimaryDark" />
+            android:textColor="@color/colorPrimaryDark1" />
 
         <View
             android:layout_width="fill_parent"
             android:layout_height="@dimen/separation_view_height"
             android:layout_marginTop="@dimen/separator_view_margin_top"
-            android:background="@color/colorPrimary" />
+            android:background="@color/colorPrimary1" />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -64,7 +64,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="12dp"
-            android:background="@color/colorPrimary"
+            android:background="@color/colorPrimary1"
             android:text="@string/add_new_location"
             android:textAppearance="@style/TextAppearance.AppCompat.Button"
             android:textColor="@android:color/white" />
@@ -75,13 +75,13 @@
             android:layout_marginTop="12dp"
             android:text="@string/location_list"
             android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-            android:textColor="@color/colorPrimaryDark" />
+            android:textColor="@color/colorPrimaryDark1" />
 
         <View
             android:layout_width="fill_parent"
             android:layout_height="2dip"
             android:layout_marginTop="4dp"
-            android:background="@color/colorPrimary" />
+            android:background="@color/colorPrimary1" />
 
         <android.support.v7.widget.RecyclerView
             android:id="@+id/places_list_recycler_view"

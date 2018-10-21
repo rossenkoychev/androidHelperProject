@@ -41,6 +41,9 @@
         <activity android:name=".shush_me.ShushMainActivity" />
         <activity android:name=".users.UserActivity" />
         <activity android:name=".mvp.MVPMainActivity" />
+        <activity android:name=".espresso.MenuActivity"/>
+        <activity android:name=".espresso.OrderActivity"/>
+        <activity android:name=".espresso.OrderSummaryActivity"/>
 
         <service android:name=".squaker_cloud.fcm.SquawkFirebaseMessageService" >
         <intent-filter>
