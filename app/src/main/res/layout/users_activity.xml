@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".users.UserActivity"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <EditText
+        android:id="@+id/username_edittext"
+        android:layout_width="0dp"
+        app:layout_constraintHorizontal_weight="7"
+        android:layout_height="wrap_content"
+        android:hint="@string/enter_name_edittext"
+        android:inputType="text"/>
+
+    <Button
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintHorizontal_weight="3"
+        app:layout_constraintLeft_toRightOf="@id/username_edittext"
+        app:layout_constraintTop_toTopOf="@id/username_edittext"
+        android:text="@string/add_user_text"/>
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/users_recycler_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+    </android.support.v7.widget.RecyclerView>
+
+</android.support.constraint.ConstraintLayout>

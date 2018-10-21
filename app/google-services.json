@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "66234898744",
+    "firebase_url": "https://androidlearning-7a2f3.firebaseio.com",
+    "project_id": "androidlearning-7a2f3",
+    "storage_bucket": "androidlearning-7a2f3.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:66234898744:android:252af794d3464e8c",
+        "android_client_info": {
+          "package_name": "com.example.rossen.androidadvancedlearning"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "66234898744-0tot6nv0evaf7cdma3faaktme7nmqgu8.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC9koxQX2Oa8LJSE-A5ys5XUJolibuHwuw"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
