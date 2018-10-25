@@ -17,6 +17,7 @@
 package com.example.rossen.androidadvancedlearning.espresso
 
 
+import android.support.test.espresso.IdlingResource
 import java.util.concurrent.atomic.AtomicBoolean
 
 /**
@@ -30,18 +31,21 @@ import java.util.concurrent.atomic.AtomicBoolean
 class SimpleIdlingResource : IdlingResource {
 
     @Volatile
-    private var mCallback: ResourceCallback? = null
+    private var mCallback: IdlingResource.ResourceCallback? = null
 
     // Idleness is controlled with this boolean.
     private val mIsIdleNow = AtomicBoolean(true)
 
-    val name: String
-        get() = this.javaClass.name
+    override fun getName(): String {
+        return this.javaClass.name
+    }
 
-    val isIdleNow: Boolean
-        get() = mIsIdleNow.get()
+    override fun isIdleNow(): Boolean{
+        return mIsIdleNow.get()
+    }
 
-    fun registerIdleTransitionCallback(callback: ResourceCallback) {
+
+    override fun registerIdleTransitionCallback(callback: IdlingResource.ResourceCallback) {
         mCallback = callback
     }
 

@@ -18,6 +18,8 @@ package com.example.rossen.androidadvancedlearning.espresso
 
 import android.content.Intent
 import android.os.Bundle
+import android.support.annotation.VisibleForTesting
+import android.support.test.espresso.IdlingResource
 import android.support.v7.app.AppCompatActivity
 import android.support.v7.widget.Toolbar
 import android.view.View
@@ -29,17 +31,36 @@ import com.example.rossen.androidadvancedlearning.espresso.model.Tea
 
 import java.util.ArrayList
 
-class MenuActivity : AppCompatActivity() {
+class MenuActivity : AppCompatActivity(),ImageDownloader.DelayerCallback {
 
+    private var mIdlingResource: SimpleIdlingResource? = null
 
+    @VisibleForTesting
+    fun getIdlingResource(): IdlingResource? {
+        if (mIdlingResource == null) {
+            mIdlingResource = SimpleIdlingResource()
+        }
+        return mIdlingResource
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_menu)
         val menuToolbar = findViewById<View>(R.id.menu_toolbar) as Toolbar
-      //  setSupportActionBar(menuToolbar)
+        //  setSupportActionBar(menuToolbar)
         supportActionBar!!.setTitle(getString(R.string.menu_title))
 
+        getIdlingResource()
+    }
+
+    override fun onStart() {
+        super.onStart()
+        ImageDownloader.downloadImage(this,this , mIdlingResource)
+    }
+
+
+    override fun onDone( teas:ArrayList<Tea> )
+    {
         // Create an ArrayList of teas
         val teas = ArrayList<Tea>()
         teas.add(Tea(getString(R.string.black_tea_name), R.drawable.black_tea))
@@ -65,11 +86,9 @@ class MenuActivity : AppCompatActivity() {
             mTeaIntent.putExtra(EXTRA_TEA_NAME, teaName)
             startActivity(mTeaIntent)
         }
-
     }
 
     companion object {
-
         val EXTRA_TEA_NAME = "com.example.android.teatime.EXTRA_TEA_NAME"
     }
 

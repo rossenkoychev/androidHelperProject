@@ -19,6 +19,7 @@ package com.example.rossen.androidadvancedlearning.espresso
 import android.content.Context
 import android.os.Handler
 import android.widget.Toast
+import com.example.rossen.androidadvancedlearning.R
 import com.example.rossen.androidadvancedlearning.espresso.model.Tea
 import java.util.*
 
@@ -61,7 +62,6 @@ internal object ImageDownloader {
          * performing the next action.
          */
         idlingResource?.setIdleState(false)
-
 
         // Display a toast to let the user know the images are downloading
         val text = context.getString(R.string.loading_msg)
