@@ -44,6 +44,7 @@
         <activity android:name=".espresso.MenuActivity"/>
         <activity android:name=".espresso.OrderActivity"/>
         <activity android:name=".espresso.OrderSummaryActivity"/>
+        <activity android:name=".mvvm.MVVMMainActivity"/>
 
         <service android:name=".squaker_cloud.fcm.SquawkFirebaseMessageService" >
         <intent-filter>

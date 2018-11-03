@@ -11,18 +11,29 @@ abstract class UserDB : RoomDatabase() {
     abstract fun userDao(): UserDao
 
     companion object {
-        private var INSTANCE: UserDB?=null
+        private var INSTANCE: UserDB? = null
 
-        fun getInstance(context: Context): UserDB? {
-            if (INSTANCE == null) {
-                synchronized(UserDB::class) {
-                    INSTANCE = Room.databaseBuilder(context.getApplicationContext(),
-                            UserDB::class.java, "UserDB.db")
-                            .build()
+//        fun getInstance(context: Context): UserDB? {
+//            if (INSTANCE == null) {
+//                synchronized(UserDB::class) {
+//                    INSTANCE = Room.databaseBuilder(context.getApplicationContext(),
+//                            UserDB::class.java, "UserDB.db")
+//                            .build()
+//                }
+//            }
+//            return INSTANCE
+//        }
+
+        fun getInstance(context: Context): UserDB =
+                INSTANCE ?: synchronized(this) {
+                    INSTANCE ?: buildDatabase(context).also { INSTANCE = it }
                 }
-            }
-            return INSTANCE
-        }
+
+        private fun buildDatabase(context: Context) =
+                Room.databaseBuilder(context.applicationContext,
+                        UserDB::class.java, "UserDB.db")
+                        .build()
+
 
         fun destroyInstance() {
             INSTANCE = null

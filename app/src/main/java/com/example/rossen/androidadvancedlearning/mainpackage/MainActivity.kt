@@ -9,6 +9,7 @@ import com.example.rossen.androidadvancedlearning.espresso.MenuActivity
 import com.example.rossen.androidadvancedlearning.fragments.ui.MainFragmentsActivity
 import com.example.rossen.androidadvancedlearning.libraries.EmojifyMeActivity
 import com.example.rossen.androidadvancedlearning.mvp.MVPMainActivity
+import com.example.rossen.androidadvancedlearning.mvvm.MVVMMainActivity
 import com.example.rossen.androidadvancedlearning.shush_me.ShushMainActivity
 import com.example.rossen.androidadvancedlearning.squaker_cloud.MainSquakerActivity
 import kotlinx.android.synthetic.main.main_activity.*
@@ -49,6 +50,10 @@ class MainActivity : Activity() {
             startActivity(espressoIntent)
         }
 
+        mvvm_button.setOnClickListener {
+            val mvvmIntent=Intent(this,MVVMMainActivity::class.java)
+            startActivity(mvvmIntent)
+        }
 
     }
 

@@ -8,7 +8,7 @@ import java.util.*
 @Entity(tableName = "users")
 data class User(@ColumnInfo(name = "username")
                 val userName: String) {
-    @PrimaryKey
+    @PrimaryKey(autoGenerate = true)
     @ColumnInfo(name = "userid")
-    val id: String = UUID.randomUUID().toString()
+    var id: Int = 0
 }

@@ -21,6 +21,7 @@ import android.arch.persistence.room.Dao
 import android.arch.persistence.room.Insert
 import android.arch.persistence.room.OnConflictStrategy
 import android.arch.persistence.room.Query
+import io.reactivex.Completable
 
 import io.reactivex.Flowable
 
@@ -41,14 +42,14 @@ interface UserDao {
 
 
     @Query("SELECT * FROM users")
-    fun getUsers(): LiveData<List<User>>
+    fun getUsers(): Flowable<List<User>>
     /**
      * Insert a user in the database. If the user already exists, replace it.
 
      * @param user the user to be inserted.
      */
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    fun insertUser(user: User)
+    fun insertUser(user: User):Long
 
     /**
      * Delete all users.

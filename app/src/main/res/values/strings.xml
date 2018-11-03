@@ -121,6 +121,7 @@
     <string name="done_msg">Your tea is ready!</string>
     <string name="go_to_esrpresso_button">go to espresso</string>
     <string name="loading_msg">Loading images</string>
+    <string name="go_to_mvvm_button">go to MVVM</string>
 
 
     <!--Spinner Options-->
